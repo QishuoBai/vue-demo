@@ -11,13 +11,20 @@ export default defineComponent({
     components: {},
     data() {
         return {
-            class_name: 'normal'
+            class_name: 'normal',
+            rect: null
+        }
+    },
+    props:{
+        color:{
+            type: String,
+            defalut: 'green'
         }
     },
     methods: {
         drawBar(){
-            let rect = d3.select('#test-bar').append('rect').attr('height', '10px').attr('width', '10px');
-            rect.on('mouseover', ()=>{
+            this.rect = d3.select('#test-bar').append('rect').attr('height', '10px').attr('width', '10px').attr('fill', this.color);
+            this.rect.on('mouseover', ()=>{
                 this.class_name = 'hover';
             }).on('mouseout', () =>{
                 this.class_name = 'normal';
@@ -25,7 +32,13 @@ export default defineComponent({
             
         }
     },
+    watch:{
+        color(color, oldcolor){
+            this.rect.attr('fill', color);
+        }
+    },
     mounted() {
+        console.log(this.color);
         this.drawBar();
     },
 })
