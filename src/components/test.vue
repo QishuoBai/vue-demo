@@ -6,6 +6,7 @@
 <script>
 import { defineComponent } from 'vue'
 import * as d3 from 'd3'
+import data from '../assets/data.json'
 export default defineComponent({
     name: "test",
     components: {},
@@ -39,6 +40,7 @@ export default defineComponent({
     },
     mounted() {
         console.log(this.color);
+        console.log(data);
         this.drawBar();
     },
 })
