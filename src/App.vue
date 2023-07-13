@@ -1,38 +1,28 @@
-<!-- <script setup>
-// import HelloWorld from './components/HelloWorld.vue'
-import test from './components/test.vue';
-</script> -->
-
 <template>
-  <svg width="300px" height="300px"> 
-    <test :color="color" @click="change_color"/>
+  <svg width="100%" height="100%">
+    <!-- <worldmap_heat/> -->
+    <!-- <region_pie /> -->
+    <scatter />
   </svg>
 </template>
 
 <script>
-  import test from './components/test.vue'
+  import worldmap_heat from './components/worldmap_heat.vue';
+  import region_pie from './components/region_pie.vue';
+  import scatter from './components/scatter.vue';
   export default{
     name: 'App',
-    components: {
-      test
-    },
+    components: {worldmap_heat, region_pie, scatter},
     data() {
       return {
-        color: 'black'
+        
       }
     },
     methods:{
-      change_color(){
-        this.color = 'red';
-        console.log(this.color);
-      }
+      
     }
   }
 </script>
 
-<style scoped>
-  svg{ 
-    width: '300px';
-    height: '300px';
-  }
+<style>
 </style>
