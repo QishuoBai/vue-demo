@@ -1,6 +1,7 @@
 <template>
     <g id="scatter"></g>
 </template>
+
 <script>
 import { defineComponent } from 'vue';
 import * as d3 from "d3";
@@ -11,10 +12,10 @@ export default defineComponent({
         return {
             translate:{
                 x: 50,
-                y: 50
+                y: 140
             },
             width: 1200,
-            height: 600,
+            height: 500,
             xdata: [],
             ydata: ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
             item_list: []
@@ -68,23 +69,24 @@ export default defineComponent({
             g.attr("transform", `translate(${this.translate.x} ${this.translate.y})`);
             let xScale = d3.scaleBand().domain(this.xdata).range([0, this.width]);
             let yScale = d3.scaleBand().domain(this.ydata).range([0, this.height]);
-            let xAxis = d3.axisTop().scale(xScale);
-            let yAxis = d3.axisLeft().scale(yScale);
-            g.append('g').call(xAxis).selectAll('text').attr('transform', 'translate(0 -30) rotate(-60)');
+            let xAxis = d3.axisTop().scale(xScale).tickSize(-this.height);
+            let yAxis = d3.axisLeft().scale(yScale).tickSize(-this.width);
+            g.append('g').call(xAxis)
+                .selectAll('text').attr('transform', 'translate(0 -10) rotate(-30)').attr('text-anchor', 'start');
             g.append('g').call(yAxis);
             let radiusScale = d3.scaleLinear()
                 .domain([d3.min(this.item_list, d => d.value), d3.max(this.item_list, d => d.value)])
                 .range([5, 50]);
             g.append('g').selectAll('circle').data(this.item_list).join('circle')
-                .attr('cx', d => xScale(d.x))
-                .attr('cy', d => yScale(d.y))
+                .attr('cx', d => xScale(d.x) + xScale.bandwidth()/2)
+                .attr('cy', d => yScale(d.y) + yScale.bandwidth()/2)
                 .attr('r', d => radiusScale(d.value))
                 .attr('opacity', 0.4);
         }
     },
     mounted() {
-        // this.get_data('member');
-        this.get_data('sector');
+        this.get_data('member');
+        // this.get_data('sector');
         this.drawScatter();
     },
 })

@@ -1,0 +1,170 @@
+[
+    {
+        "country": "Maldives",
+        "code": "462",
+        "amount": 7.3,
+        "project_num": 1
+    },
+    {
+        "country": "Cook Islands",
+        "code": "184",
+        "amount": 20,
+        "project_num": 1
+    },
+    {
+        "country": "Ecuador",
+        "code": "218",
+        "amount": 50,
+        "project_num": 1
+    },
+    {
+        "country": "Kyrgyz Republic",
+        "code": "417",
+        "amount": 50,
+        "project_num": 1
+    },
+    {
+        "country": "Fiji",
+        "code": "242",
+        "amount": 100,
+        "project_num": 2
+    },
+    {
+        "country": "Côte d'Ivoire",
+        "code": "384",
+        "amount": 100,
+        "project_num": 1
+    },
+    {
+        "country": "Azerbaijan",
+        "code": "31",
+        "amount": 100,
+        "project_num": 1
+    },
+    {
+        "country": "Viet Nam",
+        "code": "704",
+        "amount": 100,
+        "project_num": 1
+    },
+    {
+        "country": "Belarus",
+        "code": "112",
+        "amount": 127.897,
+        "project_num": 1
+    },
+    {
+        "country": "Sri Lanka",
+        "code": "144",
+        "amount": 180,
+        "project_num": 1
+    },
+    {
+        "country": "Rwanda",
+        "code": "646",
+        "amount": 200,
+        "project_num": 2
+    },
+    {
+        "country": "Hungary",
+        "code": "348",
+        "amount": 216.1,
+        "project_num": 1
+    },
+    {
+        "country": "Mongolia",
+        "code": "496",
+        "amount": 221,
+        "project_num": 3
+    },
+    {
+        "country": "Georgia",
+        "code": "268",
+        "amount": 250,
+        "project_num": 3
+    },
+    {
+        "country": "Cambodia",
+        "code": "116",
+        "amount": 285,
+        "project_num": 4
+    },
+    {
+        "country": "Russian Federation",
+        "code": "643",
+        "amount": 300,
+        "project_num": 1
+    },
+    {
+        "country": "Egypt",
+        "code": "818",
+        "amount": 360,
+        "project_num": 1
+    },
+    {
+        "country": "Jordan",
+        "code": "400",
+        "amount": 450,
+        "project_num": 2
+    },
+    {
+        "country": "China",
+        "code": "156",
+        "amount": 455,
+        "project_num": 2
+    },
+    {
+        "country": "Oman",
+        "code": "512",
+        "amount": 475,
+        "project_num": 1
+    },
+    {
+        "country": "Kazakhstan",
+        "code": "398",
+        "amount": 750,
+        "project_num": 1
+    },
+    {
+        "country": "Uzbekistan",
+        "code": "860",
+        "amount": 830,
+        "project_num": 3
+    },
+    {
+        "country": "Pakistan",
+        "code": "586",
+        "amount": 1250,
+        "project_num": 3
+    },
+    {
+        "country": "Türkiye",
+        "code": "792",
+        "amount": 1282.6,
+        "project_num": 6
+    },
+    {
+        "country": "Bangladesh",
+        "code": "50",
+        "amount": 2050,
+        "project_num": 7
+    },
+    {
+        "country": "India",
+        "code": "356",
+        "amount": 2250,
+        "project_num": 4
+    },
+    {
+        "country": "Philippines",
+        "code": "608",
+        "amount": 2500,
+        "project_num": 6
+    },
+    {
+        "country": "Indonesia",
+        "code": "360",
+        "amount": 2500,
+        "project_num": 5
+    }
+]
