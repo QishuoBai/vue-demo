@@ -8,6 +8,7 @@
     <!-- <project_time_line /> -->
     <!-- <timeline_scatter /> -->
     <!-- <country_upline /> -->
+    <!-- <crf_project /> -->
   </svg>
 </template>
 
@@ -20,9 +21,10 @@ import project_ring from './components/project_ring.vue';
 import project_time_line from './components/project_time_line.vue';
 import timeline_scatter from './components/timeline_scatter.vue';
 import country_upline from './components/country_upline.vue';
+import crf_project from './components/crf_project.vue';
 export default {
   name: 'App',
-  components: { worldmap_heat, region_pie, scatter, project_bar, project_ring, project_time_line, timeline_scatter, country_upline},
+  components: { worldmap_heat, region_pie, scatter, project_bar, project_ring, project_time_line, timeline_scatter, country_upline, crf_project},
   data() {
     return {
 

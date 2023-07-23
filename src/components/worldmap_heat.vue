@@ -9,6 +9,7 @@ import member_sector2project from '../assets/member_sector2project.json'
 import country_development from '../assets/human-development-index-hdi-by-country-2023.json'
 import project_list from '../assets/project_list.json'
 import crf_country_list from '../assets/crf_country_list.json'
+import new_geojson from '../assets/countries_1.geo.json'
 import * as d3 from "d3";
 export default defineComponent({
     name: "worldmap_heat",
@@ -25,18 +26,19 @@ export default defineComponent({
         draw_map() {
             // console.log(topojson);
             let map = d3.select('#map');
-            let geoData = topojson.feature(mapData, mapData.objects.countries).features;
-            console.log(geoData);
-            let ignore_code = ['010']
-            geoData = geoData.filter(d => {
-                let isDraw = true;
-                ignore_code.forEach(c => {
-                    if (d.id == c) {
-                        isDraw = false;
-                    }
-                });
-                return isDraw;
-            });
+            // let geoData = topojson.feature(mapData, mapData.objects.countries).features;
+            let geoData = new_geojson.features;
+            // console.save(geoData, 'geoData.json');
+            // let ignore_code = ['010']
+            // geoData = geoData.filter(d => {
+            //     let isDraw = true;
+            //     ignore_code.forEach(c => {
+            //         if (d.id == c) {
+            //             isDraw = false;
+            //         }
+            //     });
+            //     return isDraw;
+            // });
             // geoData.forEach(d => {
             //     if(parseInt(d.id) == 184){
             //         console.log(d);
@@ -67,12 +69,12 @@ export default defineComponent({
                 .attr("fill", "white")
                 .attr("opacity", 1)
                 .attr("stroke", "black");
-            let country_num = [];
-            for (let member in member_sector2project) {
-                country_num.push([member, member_sector2project[member].amount]);
-            }
-            let heatScale = d3.scaleLinear().domain([d3.min(country_num, d => d[1]), d3.max(country_num, d => d[1])]).range([0, 1])
-            let interpolate = d3.interpolate('gray', 'black');
+            // let country_num = [];
+            // for (let member in member_sector2project) {
+            //     country_num.push([member, member_sector2project[member].amount]);
+            // }
+            // let heatScale = d3.scaleLinear().domain([d3.min(country_num, d => d[1]), d3.max(country_num, d => d[1])]).range([0, 1])
+            // let interpolate = d3.interpolate('gray', 'black');
             // fill country by 金额
             // country_num.forEach(d => {
             //     if(d[0] != 'Multicountry'){
@@ -156,24 +158,24 @@ export default defineComponent({
             // }
             // country_x_list.sort((a, b) => a[1] - b[1]);
             //  画出CRF项目圆圈
-            let geoData_dict = new Object();
-            let country_out = 
-            geoData.forEach(d => {
-                geoData_dict[parseInt(d.id).toString()] = d;
-            });
-            let rScale = d3.scaleLinear().domain(d3.extent(crf_country_list, d => d.amount)).range([5, 15]);
-            map.append('g').selectAll('circle').data(crf_country_list).join('circle')
-                .attr('cx', d => {
-                    return path.centroid(geoData_dict[d.code])[0]
-                })
-                .attr('cy', d => {
-                    return path.centroid(geoData_dict[d.code])[1]
-                })
-                .attr('r', d => {
-                    return rScale(d.amount)
-                })
-                .attr('opacity', 0.4)
-                .attr('fill', 'red');
+            // let geoData_dict = new Object();
+            // let country_out = 
+            // geoData.forEach(d => {
+            //     geoData_dict[parseInt(d.id).toString()] = d;
+            // });
+            // let rScale = d3.scaleLinear().domain(d3.extent(crf_country_list, d => d.amount)).range([5, 15]);
+            // map.append('g').selectAll('circle').data(crf_country_list).join('circle')
+            //     .attr('cx', d => {
+            //         return path.centroid(geoData_dict[d.code])[0]
+            //     })
+            //     .attr('cy', d => {
+            //         return path.centroid(geoData_dict[d.code])[1]
+            //     })
+            //     .attr('r', d => {
+            //         return rScale(d.amount)
+            //     })
+            //     .attr('opacity', 0.4)
+            //     .attr('fill', 'red');
 
         }
     },
